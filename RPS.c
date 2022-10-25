@@ -52,6 +52,7 @@ int game(char you, char computer)
 }
 
 
+//DECLARING THE MAIN FUCTION
 
 int main()
 
@@ -64,8 +65,8 @@ int main()
 
 	n = rand() % 100;
 
-
-	if(n < 33)
+    //GIVING EACH OF THE 3 OPTIONS(R,P,S) A 33.3% CHANCE OF BEING CALLED BY THE COMPUTER
+	if (n < 33)
 		computer = 'r';
 
 
@@ -75,25 +76,29 @@ int main()
 	else
 		computer = 's';
 
-	printf("Enter 'r' for rock, enter 'p' for paper, enter 's' for scissos ");
-
+	printf("Enter 'r' for rock, enter 'p' for paper, enter 's' for scissors ");
+	
+	//TAKING USER INPUT
 	scanf("%c", &you);
 	result = (you, computer);
 
 	result = game(you, computer);
 
 	if (result == -1){
-		printf("DRAW");
+		printf("ITS A DRAW!!!\n");
 	}
 	else if (result == 1){
 
-		printf("YOU WON");
+		printf("YOU WON!!!\n");
 	}
 
 	else{
 
-		printf("YOU LOST");
+		printf("YOU LOST!!!\n");
 	}
-
+ 
+    printf("You chose:%c and computer chose:%c\n" , you, computer);
+    
+    //returning 0 for the main function
 	return 0;
 }
